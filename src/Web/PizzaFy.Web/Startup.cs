@@ -2,17 +2,6 @@
 {
     using System.Reflection;
 
-    using PizzaFy.Data;
-    using PizzaFy.Data.Common;
-    using PizzaFy.Data.Common.Repositories;
-    using PizzaFy.Data.Models;
-    using PizzaFy.Data.Repositories;
-    using PizzaFy.Data.Seeding;
-    using PizzaFy.Services.Data;
-    using PizzaFy.Services.Mapping;
-    using PizzaFy.Services.Messaging;
-    using PizzaFy.Web.ViewModels;
-
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -21,6 +10,15 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using PizzaFy.Data;
+    using PizzaFy.Data.Common;
+    using PizzaFy.Data.Common.Repositories;
+    using PizzaFy.Data.Models;
+    using PizzaFy.Data.Repositories;
+    using PizzaFy.Data.Seeding;
+    using PizzaFy.Services.Mapping;
+    using PizzaFy.Services.Messaging;
+    using PizzaFy.Web.ViewModels;
 
     public class Startup
     {
@@ -64,7 +62,6 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

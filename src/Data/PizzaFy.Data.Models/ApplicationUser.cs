@@ -4,9 +4,8 @@ namespace PizzaFy.Data.Models
     using System;
     using System.Collections.Generic;
 
-    using PizzaFy.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
+    using PizzaFy.Data.Common.Models;
 
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {
@@ -16,6 +15,8 @@ namespace PizzaFy.Data.Models
             this.Roles = new HashSet<IdentityUserRole<string>>();
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
+
+            this.Addresses = new HashSet<Address>();
         }
 
         // Audit info
@@ -33,5 +34,7 @@ namespace PizzaFy.Data.Models
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+        public virtual ICollection<Address> Addresses { get; set; }
     }
 }

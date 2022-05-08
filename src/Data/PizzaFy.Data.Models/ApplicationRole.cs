@@ -3,9 +3,8 @@ namespace PizzaFy.Data.Models
 {
     using System;
 
-    using PizzaFy.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
+    using PizzaFy.Data.Common.Models;
 
     public class ApplicationRole : IdentityRole, IAuditInfo, IDeletableEntity
     {
